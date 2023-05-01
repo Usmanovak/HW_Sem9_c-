@@ -12,8 +12,9 @@ Write("Введите первое число: ");
 int m = int.Parse(ReadLine()!);
 Write("Введите второе число: ");
 int n = int.Parse(ReadLine()!);
-string k = Numbers(m, n);
-int num = int.Parse(k);
+
+
+int num = int.Parse(Numbers(m, n));
 
 SumNumbers(num);
 WriteLine(SumNumbers(num));
@@ -21,18 +22,13 @@ WriteLine(SumNumbers(num));
 
 string Numbers (int m, int n)
 {
-    if (m == n)
-    {
-        return m.ToString();
-    }
+    if (m == n) return m.ToString();
     return m + Numbers(++m, n);
 }
 
 int SumNumbers(int num)
 {
-    if (num == 0)
-    {
-        return 0;
-    }
+    if (num == 0) return 0;
     return (num % 10 + SumNumbers(num / 10));
 }
+
